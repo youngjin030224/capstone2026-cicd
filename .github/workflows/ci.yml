@@ -46,3 +46,17 @@ jobs:
           cd frontend
           npm install
           npm run build
+          
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            # 실행 권한 부여 단계 추가
+            - name: Grant execute permission for mvnw
+              run: chmod +x backend/mvnw  # 경로가 backend 하위라면 이와 같이 설정
+
+            - name: Maven 빌드 & 테스트
+              run: |
+                cd backend
+                ./mvnw clean package
