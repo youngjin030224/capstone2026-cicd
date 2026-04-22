@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
+*.userlibraries
+*.zip
+docker-compose
 # dependencies
 /node_modules
 /.pnp
